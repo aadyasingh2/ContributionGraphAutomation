@@ -30,8 +30,3 @@ query=f"""query{{
 response=requests.post(URL,json={"query":query},headers={'Authorization':"Bearer "+token})
 print(response.json())
 graphdata=response.json()['data']['user']['contributionsCollection']['contributionCalendar']['weeks']
-
-for week in graphdata:
-    weeklyContributions=week['contributionDays']
-    for day in weeklyContributions:
-        print(f"Today's date: {day['date']}\n Contributions Made Today: {day['contributionCount']}")
