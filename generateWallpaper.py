@@ -2,7 +2,7 @@ from PIL import Image
 from PIL import ImageDraw
 from FetchContributions import graphdata
 import os
-
+import ctypes
 im=Image.new(size=(1920,1080),mode='RGB')
 squares=ImageDraw.Draw(im)
 
@@ -24,4 +24,4 @@ for i,week in enumerate(graphdata):
             squares.rounded_rectangle(xy=(x,y,x+20,y+20),fill= (57, 211, 83),radius =4)
 im.save("wallpaper.png")
 filename=os.path.abspath("wallpaper.png")
-print(filename)
+ctypes.windll.user32.SystemParametersInfoW(20,0,filename,3)
