@@ -29,3 +29,4 @@ query=f"""query{{
         }}"""
 response=requests.post(URL,json={"query":query},headers={'Authorization':"Bearer "+token})
 graphdata=response.json()['data']['user']['contributionsCollection']['contributionCalendar']['weeks']
+total=response.json()['data']['user']['contributionsCollection']['contributionCalendar']['totalContributions']
