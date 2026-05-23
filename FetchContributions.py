@@ -1,14 +1,14 @@
 import requests
 from dotenv import load_dotenv
 import os
-
+from config import USERNAME
 load_dotenv()
 
 
 
 token= os.getenv("GITHUB_TOKEN")
 URL="https://api.github.com/graphql"
-username="aadyasingh2"
+username=USERNAME
 query=f"""query{{
             user(login:"{username}"){{
                 contributionsCollection
