@@ -28,5 +28,4 @@ query=f"""query{{
             }}
         }}"""
 response=requests.post(URL,json={"query":query},headers={'Authorization':"Bearer "+token})
-print(response.json())
 graphdata=response.json()['data']['user']['contributionsCollection']['contributionCalendar']['weeks']
